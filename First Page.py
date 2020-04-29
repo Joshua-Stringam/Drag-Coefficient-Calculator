@@ -5,6 +5,17 @@ import numpy as np
 
 
 from matplotlib.collections import EventCollection
+x1=0
+x2=0
+x3=0
+x4=0
+x5=0
+
+y1=0
+y2=0
+y3=0
+y4=0
+y5=0
 
 #####Code to Create Input Screen#####
 window = Tk()
@@ -116,25 +127,25 @@ def ClickBang():
     Y5= txtY5.get()
     y5= float(Y5)
 
+    #####Code To Plot Results############
+
+    x = [x1, x2, x3, x4, x5]
+    y = [y1, y2, y3, y4, y5]
+
+    plt.plot(x, y, linestyle='', marker='o', color='b')
+    plt.xlabel('Distance in Yards')
+    plt.ylabel('Bullet Path in Inches')
+
+    plt.title('Ballistic Data for Brenneke K.O. Slugs')
+    plt.show()
+
+    ####################################
+
 BangBang = Button(window, text="Bang! Bang!", command=ClickBang)
 BangBang.grid(column=0, row=11)
 
 
 #####################################
 
-#####Code To Plot Results############
 
-x1=0
-
-x = [x1, x2, x3, x4, x5]
-y = [y1, y2, y3, y4, y5]
-
-plt.plot(x,y, linestyle='', marker='o', color='b')
-plt.xlabel('Distance in Yards')
-plt.ylabel('Bullet Path in Inches')
-
-plt.title('Ballistic Data for Brenneke K.O. Slugs')
-plt.show()
-
-####################################
 window.mainloop()
